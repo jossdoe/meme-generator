@@ -4,7 +4,7 @@ import Gallery from './Gallery';
 import UploadButton from './UploadButton';
 
 const ChooseMeme = () => {
-  const images = gridImg.map(img => <Gallery key={img.id} imgFile={img.imgFile} />)
+  const images = gridImg.map(img => <Gallery key={img.id} imgFile={img.src} />)
 
   return (
     <div className="gallery">

@@ -8,7 +8,9 @@ const Editor = () => {
       <nav className={css.navigation}>
         <EditorNav />
       </nav>
-      <section className={css.meme}></section>
+      <section className={css.meme}>
+        <img src="https://via.placeholder.com/500" alt="" />
+      </section>
     </main>
   );
 };

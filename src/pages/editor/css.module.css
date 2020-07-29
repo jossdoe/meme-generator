@@ -14,4 +14,11 @@
 
 .meme {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meme img {
+  box-shadow: 2px 4px 7px #000000, 2px 4px 21px #000000;
 }

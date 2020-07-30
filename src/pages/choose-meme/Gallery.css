@@ -7,6 +7,11 @@
     align-items: center;
     justify-items: center;
     margin-top: 2em;
+    
+
+    
+    
+   
 }
 
 @media screen and (max-width: 760px) {
@@ -19,11 +24,15 @@
 }
 
 .div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img, .div7 img, .div8 img {
-    border-radius: 3%;
+    border-radius: 0.2em;
+    
 }
+
 
 .div1 {
     grid-area: 1 / 1 / 2 / 2;
+    
+    
 }
 
 .div2 {
@@ -34,7 +43,7 @@
     grid-area: 1 / 2 / 2 / 3;
 }
 
-.div4 {
+.div7 {
     grid-area: 2 / 2 / 3 / 3;
 }
 
@@ -46,10 +55,11 @@
     grid-area: 2 / 3 / 3 / 4;
 }
 
-.div7 {
+.div4 {
     grid-area: 1 / 4 / 2 / 5;
 }
 
 .div8 {
     grid-area: 2 / 4 / 3 / 5;
 }
+

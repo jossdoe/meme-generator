@@ -15,7 +15,7 @@ const gridImg = [
 
   {
     id: 2,
-    src: img2
+    src: img5
   },
 
   {
@@ -30,7 +30,7 @@ const gridImg = [
 
   {
     id: 5,
-    src: img5
+    src: img2
   },
 
   {

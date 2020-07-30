@@ -1,12 +1,15 @@
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
     align-items: center;
-    justify-items: center;
-    margin-top: 2em;  
+    margin: 0 5%;
+   
+   
+    
+    
+    
+    
 }
 
 @media screen and (max-width: 760px) {
@@ -20,11 +23,11 @@
 
 .gallery > div img:hover {
     border: 0.2em solid rgb(247, 200, 115);
+    
     border-radius: 1.5em;
     transition: 0.3s;
     transform: translateY(-5px);
 }
-
 @media screen and (max-width: 760px) {
     .gallery > div img:hover {
         border: none;
@@ -34,11 +37,15 @@
           }
          
     }
-    
+.gallery > div {
+    padding: 2%;
+   
+   
+}    
 
 .gallery > div img {
     border-radius: 0.2em;
-  
+
     -webkit-transition: all 0.5s ease;
     -moz-transition: all .2s ease;
       -o-transition: all 0.1s ease;
@@ -49,7 +56,7 @@
 
 
 
-.div1 {
+/* .div1 {
     grid-area: 1 / 1 / 2 / 2;
     
 }
@@ -81,5 +88,5 @@
 .div8 {
     grid-area: 2 / 4 / 3 / 5;
 }
-
+ */
 

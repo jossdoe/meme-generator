@@ -38,8 +38,7 @@
 
 .gallery > div img {
     border-radius: 0.2em;
-    
-
+  
     -webkit-transition: all 0.5s ease;
     -moz-transition: all .2s ease;
       -o-transition: all 0.1s ease;

@@ -58,10 +58,19 @@
       border-top-right-radius: 0em;
       
     }
-
     .uploadButton button {
       padding: 0.7em;
       margin: 2em;
     }
      
+}
+
+@media screen and (max-width: 1023px) and (min-width: 761px) {
+  .uploadButton img {
+    width: 50%;
+    margin-top: 0em;
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+    
+  }
 }

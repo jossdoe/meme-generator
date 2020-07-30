@@ -17,7 +17,16 @@
   margin: 5em;
   background-color: rgb(247, 200, 115);
   border-radius: 0.2em;
+  border: none;
+  transition: background-color 0.5s ease-in-out
   
+}
+.uploadButton button:hover {
+  background-color: rgb(44, 43, 43);
+  border: 0.1em solid rgb(247, 200, 115);
+  color: rgb(247, 200, 115);
+  border-radius: 0.2em;
+  transition: 0.3s;
 }
 
 /*

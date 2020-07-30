@@ -25,6 +25,7 @@
 
 .div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img, .div7 img, .div8 img {
     border-radius: 0.2em;
+    border: 0.2em solid  rgb(247, 200, 115);
     
 }
 

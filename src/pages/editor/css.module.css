@@ -12,13 +12,40 @@
   background-color: rgba(255, 255, 255, 0.07);
 }
 
-.meme {
+.memeContainer {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.meme img {
+.meme {
+  position: relative;
   box-shadow: 2px 4px 7px #000000, 2px 4px 21px #000000;
+}
+
+.topText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 32px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #fff;
+  text-shadow: 0px 0px 10px #000000;
+  padding: 10px;
+}
+
+.bottomText {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 32px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #fff;
+  text-shadow: 0px 0px 10px #000000;
+  padding: 10px;
 }

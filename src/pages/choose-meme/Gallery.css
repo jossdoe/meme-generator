@@ -6,12 +6,7 @@
     grid-row-gap: 0px;
     align-items: center;
     justify-items: center;
-    margin-top: 2em;
-    
-
-    
-    
-   
+    margin-top: 2em;  
 }
 
 @media screen and (max-width: 760px) {
@@ -23,17 +18,19 @@
      
 }
 
-.div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img, .div7 img, .div8 img {
-    border-radius: 0.2em;
-    border: 0.2em solid  rgb(247, 200, 115);
+.gallery > div:hover img {
+    border: 0.2em solid rgb(247, 200, 115);
+    border-radius: 1.5em;
     
 }
+.gallery > div img {
+    border-radius: 0.2em;
+}
+
 
 
 .div1 {
     grid-area: 1 / 1 / 2 / 2;
-    
-    
 }
 
 .div2 {
@@ -63,4 +60,5 @@
 .div8 {
     grid-area: 2 / 4 / 3 / 5;
 }
+
 

@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import css from './css.module.css';
 
-const InputFields = () => {
-  const [topValue, setTopValue] = useState('');
-  const [bottomValue, setBottomValue] = useState('');
-  const [fontFamily, setFontFamily] = useState('Impact');
-  const [fontSize, setFontSize] = useState(16);
-
-  const onChangeTop = (e) => setTopValue(e.currentTarget.value);
-  const onChangeBottom = (e) => setBottomValue(e.currentTarget.value);
-  const onChangeFontFamily = (e) => setFontFamily(e.target.value);
-  const onChangeFontSize = (e) => setFontSize(e.target.value);
+const InputFields = ({ editorState }) => {
+  const onChangeTop = (e) => editorState.setTopValue(e.currentTarget.value);
+  const onChangeBottom = (e) =>
+    editorState.setBottomValue(e.currentTarget.value);
+  const onChangeFontFamily = (e) => editorState.setFontFamily(e.target.value);
+  const onChangeFontSize = (e) => editorState.setFontSize(e.target.value);
 
   return (
     <div className={css.inputFields}>
@@ -19,7 +15,7 @@ const InputFields = () => {
         <input
           id="text-top"
           type="text"
-          value={topValue}
+          value={editorState.topValue}
           onChange={onChangeTop}
         />
       </div>
@@ -28,7 +24,7 @@ const InputFields = () => {
         <input
           id="text-bottom"
           type="text"
-          value={bottomValue}
+          value={editorState.bottomValue}
           onChange={onChangeBottom}
         />
       </div>
@@ -37,21 +33,23 @@ const InputFields = () => {
           <label htmlFor="font-family">Font Family</label>
           <select
             id="font-family"
-            value={fontFamily}
+            value={editorState.fontFamily}
             onChange={onChangeFontFamily}
           >
             <option value="Impact">Impact</option>
-            <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
           </select>
         </div>
         <div>
           <label htmlFor="font-size">Font Size</label>
-          <select id="font-size" value={fontSize} onChange={onChangeFontSize}>
-            <option value="16">16</option>
-            <option value="20">20</option>
+          <select
+            id="font-size"
+            value={editorState.fontSize}
+            onChange={onChangeFontSize}
+          >
             <option value="30">30</option>
             <option value="42">42</option>
+            <option value="54">54</option>
           </select>
         </div>
       </div>

@@ -43,12 +43,11 @@ const InputFields = () => {
             <option value="Impact">Impact</option>
             <option value="Arial">Arial</option>
             <option value="Arial Black">Arial Black</option>
-            <option value="Comic Sans">Comic Sans</option>
           </select>
         </div>
         <div>
           <label htmlFor="font-size">Font Size</label>
-          <select id="font-size" value={fontSize} onChange={onChangeFontFamily}>
+          <select id="font-size" value={fontSize} onChange={onChangeFontSize}>
             <option value="16">16</option>
             <option value="20">20</option>
             <option value="30">30</option>

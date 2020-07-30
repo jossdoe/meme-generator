@@ -1,9 +1,11 @@
 import React from 'react';
 
+
 function Gallery(props) {
+  
   return (
     <div className="gallery-item">
-      <img src={props.imgFile} alt="" />
+      <img className={props.id} src={props.imgFile} alt="" />
     </div>
   )
 }

@@ -1,7 +1,28 @@
 .uploadButton {
   text-align: center;
-  padding: 2em;
+  
 }
 .uploadButton button {
   padding: 2em;
+  margin: 2em;
+  background-color: rgb(247, 200, 115);
+  border-radius: 1%;
+}
+
+
+.uploadButton p {
+  padding: 1em;
+  font-size: 3em;
+  width: 80%;
+  height: 100px;
+  margin: 1em  auto; 
+  background-image: url(../../assets/logo/logo1.png); 
+  background-size: contain;
+  border-radius: 1%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  
+  
+  
 }

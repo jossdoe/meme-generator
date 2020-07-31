@@ -80,15 +80,22 @@ const Editor = () => {
         <EditorNav editorState={editorState} />
       </nav>
       <section className={css.memeContainer}>
-        <div
-          className={css.meme}
-          style={{ fontFamily, fontSize: `${fontSize}px` }}
-        >
-          <img src={image.src} alt="" />
-          <div className={css.topText} style={{ ...image.cssTop }}>
+        <div className={css.meme}>
+          <img src={image.src} alt='' />
+          <div
+            className={css.topText}
+            style={{ ...image.cssTop, fontFamily, fontSize: `${fontSize}px` }}
+          >
             {topValue}
           </div>
-          <div className={css.bottomText} style={{ ...image.cssBottom }}>
+          <div
+            className={css.bottomText}
+            style={{
+              ...image.cssBottom,
+              fontFamily,
+              fontSize: `${fontSize}px`
+            }}
+          >
             {bottomValue}
           </div>
         </div>

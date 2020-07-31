@@ -40,19 +40,18 @@
 }
 @media screen and (max-width: 760px) {
     .gallery > div img:hover {
-        border: none;
-        border-radius: 0em;
-        transition: 0s;
         transform: none;
+        border-radius: 0.5em;
+        border: 0.2em solid transparent;
+        
           }     
     }
 
 @media screen and (max-width: 1023px) and (min-width: 761px) {
     .gallery > div img:hover {
-        border: none;
-        border-radius: 0em;
-        transition: 0.0s;
-        transform: translateY(0px);
+        transform: none;
+        border-radius: 0.5em;
+        border: 0.2em solid transparent;
           }     
     }
 

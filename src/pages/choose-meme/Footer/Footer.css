@@ -10,11 +10,7 @@
   margin-top: 3em;
 }
 
-.socialMedia {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+
 
 @media screen and (max-width: 760px) {
   .footer h3 {

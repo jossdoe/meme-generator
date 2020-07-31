@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  margin: 0 5%;
+}
+
+.footer h3 {
+  color: rgb(247, 200, 115);
+  margin-top: 3em;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+  .footer h3 {
+    margin-top: 1em;
+  }
+}

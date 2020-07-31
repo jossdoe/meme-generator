@@ -2,14 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
- 
 }
 
 .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .uploadButton button {
@@ -18,9 +16,8 @@
   border: 0.1em solid transparent;
   background-color: rgb(247, 200, 115);
   border-radius: 0.2em;
-  
-  transition: background-color 0.5s ease-in-out
-  
+
+  transition: background-color 0.5s ease-in-out;
 }
 .uploadButton button:hover {
   background-color: rgb(44, 43, 43);
@@ -44,26 +41,23 @@
   background-repeat: no-repeat;
   }
   */
-  .uploadButton img {
-    width: 30%;
-    margin-top: 2.5em; 
-    border-radius: 0.2em;
-  
-  }
+.uploadButton img {
+  width: 30%;
+  margin-top: 2.5em;
+  border-radius: 0.2em;
+}
 
-  @media screen and (max-width: 760px) {
-    .uploadButton img {
-      width: 100%;
-      margin-top: 0em;
-      border-top-left-radius: 0em;
-      border-top-right-radius: 0em;
-      
-    }
-    .uploadButton button {
-      padding: 0.7em;
-      margin: 2em;
-    }
-     
+@media screen and (max-width: 760px) {
+  .uploadButton img {
+    width: 100%;
+    margin-top: 0em;
+    border-top-left-radius: 0em;
+    border-top-right-radius: 0em;
+  }
+  .uploadButton button {
+    padding: 0.7em;
+    margin: 2em;
+  }
 }
 
 @media screen and (max-width: 1023px) and (min-width: 761px) {
@@ -72,6 +66,5 @@
     margin-top: 0em;
     border-top-left-radius: 0em;
     border-top-right-radius: 0em;
-    
   }
 }

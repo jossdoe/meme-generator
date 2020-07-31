@@ -1,73 +1,67 @@
 .gallery {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 0 5%;   
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 5%;
 }
 
 @media screen and (max-width: 760px) {
-    .gallery {
-        margin-top: 0em;
-      }
-      .gallery > div{
-         
-         width:30%
-      }
-      .gallery > div img {
-          width: 100%;
-      }
+  .gallery {
+    margin-top: 0em;
+  }
+  .gallery > div {
+    width: 30%;
+  }
+  .gallery > div img {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 1023px) and (min-width: 761px) {
-    .gallery {
-        margin-top: 0em;
-      }
-      .gallery > div{
-         
-         width: 20%
-      }
-      .gallery > div img {
-          width: 100%;
-      }
+  .gallery {
+    margin-top: 0em;
+  }
+  .gallery > div {
+    width: 20%;
+  }
+  .gallery > div img {
+    width: 100%;
+  }
 }
 
 .gallery > div img:hover {
-    border: 0.2em solid rgb(247, 200, 115);
-    
-    border-radius: 1.5em;
-    transition: 0.3s;
-    transform: translateY(-5px);
+  border: 0.2em solid rgb(247, 200, 115);
+
+  border-radius: 1.5em;
+  transition: 0.3s;
+  transform: translateY(-5px);
 }
 @media screen and (max-width: 760px) {
-    .gallery > div img:hover {
-        transform: none;
-        border-radius: 0.5em;
-        border: 0.2em solid transparent;
-        
-          }     
-    }
-
-@media screen and (max-width: 1023px) and (min-width: 761px) {
-    .gallery > div img:hover {
-        transform: none;
-        border-radius: 0.5em;
-        border: 0.2em solid transparent;
-          }     
-    }
-
-.gallery > div {
-    padding: 2%;  
-}    
-
-.gallery > div img {
+  .gallery > div img:hover {
+    transform: none;
     border-radius: 0.5em;
     border: 0.2em solid transparent;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all .2s ease;
-      -o-transition: all 0.1s ease;
-     -ms-transition: all 0.3s ease;
-         transition: all 0.3s ease;
-
+  }
 }
 
+@media screen and (max-width: 1023px) and (min-width: 761px) {
+  .gallery > div img:hover {
+    transform: none;
+    border-radius: 0.5em;
+    border: 0.2em solid transparent;
+  }
+}
 
+.gallery > div {
+  padding: 2%;
+}
+
+.gallery > div img {
+  border-radius: 0.5em;
+  border: 0.2em solid transparent;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}

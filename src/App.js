@@ -1,8 +1,7 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-
-import ChooseMeme from './pages/choose-meme/ChooseMeme';
-import Editor from './pages/editor/Editor';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import ChooseMeme from "./pages/choose-meme/ChooseMeme";
+import Editor from "./pages/editor/Editor";
 
 function App() {
   return (

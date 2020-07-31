@@ -11,137 +11,176 @@ const gridImg = [
   {
     id: 1,
     src: img1,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Blue Button',
+        textOnPicture: true,
+        css: {
+          top: '60px',
+          left: '0px',
+          right: '100px'
+        }
+      },
+      {
+        title: 'Red Button',
+        textOnPicture: true,
+        css: {
+          top: '40px',
+          left: '110px',
+          right: '0px'
+        }
+      }
+    ]
   },
 
   {
     id: 2,
     src: img5,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Top Panel',
+        textOnPicture: true,
+        css: {
+          top: '40px',
+          bottom: null,
+          left: '0px',
+          right: '0px'
+        }
+      },
+      {
+        title: 'Bottom Panel',
+        textOnPicture: true,
+        css: {
+          bottom: '40px',
+          left: '0px',
+          right: '100px'
+        }
+      }
+    ]
   },
 
   {
     id: 3,
     src: img3,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Left Button',
+        textOnPicture: true,
+        css: {
+          top: '60px',
+          left: '0px',
+          right: '100px'
+        }
+      },
+      {
+        title: 'Right Button',
+        textOnPicture: true,
+        css: {
+          top: '30px',
+          left: '80px',
+          right: '0px'
+        }
+      }
+    ]
   },
 
   {
     id: 4,
     src: img4,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Ball Caption',
+        textOnPicture: true,
+        css: {
+          top: '50px',
+          left: '100px',
+          right: '0px'
+        }
+      },
+      {
+        title: 'Monster Caption',
+        textOnPicture: true,
+        css: {
+          bottom: '10px',
+          left: '0px',
+          right: '140px'
+        }
+      }
+    ]
   },
 
   {
     id: 5,
     src: img2,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Above Image',
+        textOnPicture: false,
+        css: {
+          display: 'none'
+        }
+      },
+      {
+        title: 'Grave Stone',
+        textOnPicture: true,
+        css: {
+          bottom: '160px',
+          left: '0px',
+          right: '15px'
+        }
+      }
+    ]
   },
 
   {
     id: 6,
     src: img6,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Above Image',
+        textOnPicture: false,
+        css: {
+          display: 'none'
+        }
+      },
+      {
+        title: 'iPod Caption',
+        textOnPicture: true,
+        css: {
+          bottom: '180px',
+          left: '0px',
+          right: '15px'
+        }
+      }
+    ]
   },
 
   {
     id: 7,
     src: img7,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Above Image',
+        textOnPicture: false,
+        css: {
+          display: 'none'
+        }
+      }
+    ]
   },
 
   {
     id: 8,
     src: img8,
-    cssTop: {
-      top: '0px',
-      bottom: null,
-      left: '0px',
-      right: '0px'
-    },
-    cssBottom: {
-      top: null,
-      bottom: '0px',
-      left: '0px',
-      right: '0px'
-    }
+    text: [
+      {
+        title: 'Above Image',
+        textOnPicture: false,
+        css: {
+          display: 'none'
+        }
+      }
+    ]
   }
 ];
 

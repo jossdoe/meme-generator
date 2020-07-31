@@ -7,17 +7,21 @@ import gridImg from '../choose-meme/gridImg';
 const Editor = () => {
   const { id } = useParams();
   const image = gridImg.find((item) => item.id === parseInt(id));
+  const panel = image.text.find((field) => !field.textOnPicture);
 
-  const [topValue, setTopValue] = useState('Top Text');
-  const [bottomValue, setBottomValue] = useState('Bottom Text');
+  const [textValues, setTextValues] = useState([]);
+  const setTextField = (id, value) => {
+    const newValues = [...textValues];
+    newValues[id] = value;
+    setTextValues(newValues);
+  };
+
   const [fontFamily, setFontFamily] = useState('Impact');
-  const [fontSize, setFontSize] = useState(42);
+  const [fontSize, setFontSize] = useState(18);
 
   const editorState = {
-    topValue,
-    setTopValue,
-    bottomValue,
-    setBottomValue,
+    textValues,
+    setTextField,
     fontFamily,
     setFontFamily,
     fontSize,
@@ -31,23 +35,21 @@ const Editor = () => {
       </nav>
       <section className={css.memeContainer}>
         <div className={css.meme}>
+          {panel !== undefined ? (
+            <div className={css.aboveImage}>{panel.title}</div>
+          ) : null}
+
           <img src={image.src} alt='' />
-          <div
-            className={css.topText}
-            style={{ ...image.cssTop, fontFamily, fontSize: `${fontSize}px` }}
-          >
-            {topValue}
-          </div>
-          <div
-            className={css.bottomText}
-            style={{
-              ...image.cssBottom,
-              fontFamily,
-              fontSize: `${fontSize}px`
-            }}
-          >
-            {bottomValue}
-          </div>
+
+          {image.text.map((field, idx) => (
+            <div
+              key={idx}
+              className={css.textOverlay}
+              style={{ ...field.css, fontFamily, fontSize: `${fontSize}px` }}
+            >
+              {field.title}
+            </div>
+          ))}
         </div>
       </section>
     </main>

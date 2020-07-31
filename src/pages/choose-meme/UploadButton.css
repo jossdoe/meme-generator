@@ -15,9 +15,10 @@
 .uploadButton button {
   padding: 2em;
   margin: 5em;
+  border: 0.1em solid transparent;
   background-color: rgb(247, 200, 115);
   border-radius: 0.2em;
-  border: none;
+  
   transition: background-color 0.5s ease-in-out
   
 }
@@ -26,7 +27,7 @@
   border: 0.1em solid rgb(247, 200, 115);
   color: rgb(247, 200, 115);
   border-radius: 0.2em;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 /*

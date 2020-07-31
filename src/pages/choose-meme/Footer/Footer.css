@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  margin: 0 5%;
+  margin: 0 5% 2.5em 5%;
 }
 
 .footer h3 {
@@ -15,5 +15,8 @@
 @media screen and (max-width: 760px) {
   .footer h3 {
     margin-top: 1em;
+  }
+  .footer {
+    margin-bottom: 0em;
   }
 }

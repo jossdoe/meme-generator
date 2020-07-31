@@ -1,0 +1,45 @@
+.inputFields {
+  padding-top: 40px;
+}
+
+.inputFields > div + div {
+  margin-top: 20px;
+}
+
+.inputFields label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.inputFields input {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.14);
+  border: none;
+  border-radius: 4px;
+  padding: 12px 18px;
+  color: inherit;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: inset 1px 2px 6px #0000002a, inset 1px 2px 18px #0000002a;
+}
+
+.dropdownContainer > div {
+  display: inline-block;
+}
+
+.dropdownContainer > div + div {
+  margin-left: 20px;
+}
+
+.dropdownContainer select {
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: none;
+  border-radius: 6px;
+  padding: 12px 18px;
+  color: inherit;
+  cursor: pointer;
+}

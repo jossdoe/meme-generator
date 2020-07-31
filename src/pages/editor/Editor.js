@@ -37,7 +37,7 @@ const Editor = () => {
       <section className={css.memeContainer}>
         <div className={css.meme}>
           {panel !== undefined ? (
-            <div className={css.aboveImage}>{panel.title}</div>
+            <div className={css.aboveImage}>{textValues[0]}</div>
           ) : null}
 
           <img src={image.src} alt='' />

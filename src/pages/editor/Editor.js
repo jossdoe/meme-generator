@@ -8,8 +8,9 @@ const Editor = () => {
   const { id } = useParams();
   const image = gridImg.find((item) => item.id === parseInt(id));
   const panel = image.text.find((field) => !field.textOnPicture);
+  const initialTextValues = image.text.map(() => 'Your Text');
 
-  const [textValues, setTextValues] = useState([]);
+  const [textValues, setTextValues] = useState(initialTextValues);
   const setTextField = (id, value) => {
     const newValues = [...textValues];
     newValues[id] = value;
@@ -31,7 +32,7 @@ const Editor = () => {
   return (
     <main className={css.main}>
       <nav className={css.navigation}>
-        <EditorNav editorState={editorState} />
+        <EditorNav editorState={editorState} fields={image.text} />
       </nav>
       <section className={css.memeContainer}>
         <div className={css.meme}>
@@ -47,7 +48,7 @@ const Editor = () => {
               className={css.textOverlay}
               style={{ ...field.css, fontFamily, fontSize: `${fontSize}px` }}
             >
-              {field.title}
+              {textValues[idx]}
             </div>
           ))}
         </div>

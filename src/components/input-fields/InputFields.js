@@ -1,33 +1,26 @@
 import React from 'react';
 import css from './css.module.css';
 
-const InputFields = ({ editorState }) => {
-  const onChangeTop = (e) => editorState.setTopValue(e.currentTarget.value);
-  const onChangeBottom = (e) =>
-    editorState.setBottomValue(e.currentTarget.value);
+const InputFields = ({ editorState, fields }) => {
+  const { textValues, setTextField } = editorState;
+
   const onChangeFontFamily = (e) => editorState.setFontFamily(e.target.value);
   const onChangeFontSize = (e) => editorState.setFontSize(e.target.value);
 
   return (
     <div className={css.inputFields}>
-      <div>
-        <label htmlFor='text-top'>Text: Top</label>
-        <input
-          id='text-top'
-          type='text'
-          value={editorState.topValue}
-          onChange={onChangeTop}
-        />
-      </div>
-      <div>
-        <label htmlFor='text-bottom'>Text: Bottom</label>
-        <input
-          id='text-bottom'
-          type='text'
-          value={editorState.bottomValue}
-          onChange={onChangeBottom}
-        />
-      </div>
+      {fields.map((field, idx) => (
+        <div key={idx}>
+          <label htmlFor={`field${idx}`}>{field.title}</label>
+          <input
+            id={`field${idx}`}
+            type='text'
+            value={textValues[idx]}
+            onChange={(e) => setTextField(idx, e.currentTarget.value)}
+          />
+        </div>
+      ))}
+
       <div className={css.dropdownContainer}>
         <div>
           <label htmlFor='font-family'>Font Family</label>

@@ -1,0 +1,19 @@
+.top {
+  margin-left: 10px;
+}
+
+.top p {
+  margin-left: 20px;
+  margin-top: -23px;
+  font-size: 15px;
+}
+
+.top:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}

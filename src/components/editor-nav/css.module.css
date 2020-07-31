@@ -4,15 +4,18 @@
   height: 100%;
 }
 
+
 .top {
   height: auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.07);
+
 }
 
 .middle {
   flex: 1;
   padding: 20px;
+  
 }
 
 .bottom {

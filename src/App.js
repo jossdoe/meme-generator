@@ -6,17 +6,15 @@ import Editor from './pages/editor/Editor';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <ChooseMeme />
         </Route>
-        <Route path="/editor/:id">
+        <Route path='/editor/:id'>
           <Editor />
         </Route>
-        <Route exact path="/editor">
-          <Redirect to="/" />
-        </Route>
+        <Redirect to='/' />
       </Switch>
     </div>
   );

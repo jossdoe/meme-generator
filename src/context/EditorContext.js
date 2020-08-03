@@ -4,7 +4,7 @@ import { default as templates } from '../pages/choose-meme/gridImg';
 
 const initialState = {
   template: templates[0],
-  textFields: [],
+  textFields: [...templates[0].text.map(() => 'Your Text')],
   fontFamily: 'Impact',
   fontSize: 18
 };
@@ -13,7 +13,8 @@ const editorReducer = (state, action) => {
   switch (action.type) {
     case 'SET_TEMPLATE':
       const newTemplate =
-        templates.find((item) => item.id === action.id) || templates[0];
+        templates.find((item) => item.id === parseInt(action.id)) ||
+        templates[0];
       return {
         ...state,
         template: newTemplate,
@@ -36,7 +37,7 @@ const editorReducer = (state, action) => {
   }
 };
 
-export const EditorContext = createContext({});
+export const EditorContext = createContext({ ...initialState });
 
 const EditorContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(editorReducer, initialState);

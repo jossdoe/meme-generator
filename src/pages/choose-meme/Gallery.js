@@ -1,12 +1,12 @@
-import React from 'react';
+import React from "react";
+import "./Gallery.css";
 
 function Gallery(props) {
   return (
-    <div className="gallery-item">
-      {props.imgFile}
+    <div className={`div${props.id}`}>
+      <img src={props.imgFile} alt="" />
     </div>
-  )
+  );
 }
-
 
 export default Gallery;

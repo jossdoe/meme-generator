@@ -1,19 +1,20 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import ChooseMeme from './pages/choose-meme/ChooseMeme';
 import Editor from './pages/editor/Editor';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <ChooseMeme />
         </Route>
-        <Route path="/editor">
+        <Route path='/editor/:id'>
           <Editor />
         </Route>
+        <Redirect to='/' />
       </Switch>
     </div>
   );

@@ -15,7 +15,7 @@ const Editor = () => {
   }, []);
 
   const image = state.template;
-  const panel = image.text.find((field) => !field.textOnPicture);
+  const panel = image.text.find((field) => !field.textOnPicture) !== undefined;
 
   return (
     <main className={css.main}>
@@ -24,7 +24,7 @@ const Editor = () => {
       </nav>
       <section className={css.memeContainer}>
         <div className={css.meme}>
-          {panel !== undefined ? (
+          {panel ? (
             <div className={css.aboveImage}>{state.textFields[0]}</div>
           ) : null}
 

@@ -1,43 +1,31 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { EditorContext } from '../../context';
 import css from './css.module.css';
 import EditorNav from '../../components/editor-nav/EditorNav';
-import gridImg from '../choose-meme/gridImg';
 
 const Editor = () => {
+  const { state, dispatch } = useContext(EditorContext);
   const { id } = useParams();
-  const image = gridImg.find((item) => item.id === parseInt(id));
-  const panel = image.text.find((field) => !field.textOnPicture);
-  const initialTextValues = image.text.map(() => 'Your Text');
 
-  const [textValues, setTextValues] = useState(initialTextValues);
-  const setTextField = (id, value) => {
-    const newValues = [...textValues];
-    newValues[id] = value;
-    setTextValues(newValues);
-  };
+  useEffect(() => {
+    dispatch({ type: 'SET_TEMPLATE', id });
+    // eslint-disable-next-line
+  }, []);
 
-  const [fontFamily, setFontFamily] = useState('Impact');
-  const [fontSize, setFontSize] = useState(18);
-
-  const editorState = {
-    textValues,
-    setTextField,
-    fontFamily,
-    setFontFamily,
-    fontSize,
-    setFontSize
-  };
+  const image = state.template;
+  const panel = image.text.find((field) => !field.textOnPicture) !== undefined;
 
   return (
     <main className={css.main}>
       <nav className={css.navigation}>
-        <EditorNav editorState={editorState} fields={image.text} />
+        <EditorNav />
       </nav>
       <section className={css.memeContainer}>
         <div className={css.meme}>
-          {panel !== undefined ? (
-            <div className={css.aboveImage}>{panel.title}</div>
+          {panel ? (
+            <div className={css.aboveImage}>{state.textFields[0]}</div>
           ) : null}
 
           <img src={image.src} alt='' />
@@ -46,9 +34,13 @@ const Editor = () => {
             <div
               key={idx}
               className={css.textOverlay}
-              style={{ ...field.css, fontFamily, fontSize: `${fontSize}px` }}
+              style={{
+                ...field.css,
+                fontFamily: state.fontFamily,
+                fontSize: `${state.fontSize}px`
+              }}
             >
-              {textValues[idx]}
+              {state.textFields[idx]}
             </div>
           ))}
         </div>

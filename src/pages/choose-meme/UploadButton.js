@@ -15,14 +15,14 @@ function UploadButton() {
       <div className='logo'>
         <img src={logo} alt='logo' />
       </div>
-      
+        
         <input
           type='text'
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
         />
         <button onClick={handleClick}>UPLOAD YOUR PICTURE</button>
-      
+        
     </div>
   );
 }

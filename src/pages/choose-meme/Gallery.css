@@ -22,7 +22,7 @@
     margin-top: 0em;
   }
   .gallery > div {
-    width: 30%;
+    width: 25%;
   }
   .gallery > div img {
     width: 100%;
@@ -64,4 +64,18 @@
   -o-transition: all 0.1s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 1700px) {
+  .gallery > div {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .gallery > div img {
+    width: 100%;
+    align-self: center;
+  }
 }

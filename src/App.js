@@ -11,8 +11,11 @@ function App() {
         <Route exact path='/'>
           <ChooseMeme />
         </Route>
+        <Route path='/editor/custom'>
+          <Editor custom={true} />
+        </Route>
         <Route path='/editor/:id'>
-          <Editor />
+          <Editor custom={false} />
         </Route>
         <Redirect to='/' />
       </Switch>

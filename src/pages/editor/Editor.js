@@ -5,12 +5,25 @@ import { EditorContext } from '../../context';
 import css from './css.module.css';
 import EditorNav from '../../components/editor-nav/EditorNav';
 
-const Editor = () => {
+const Editor = ({ custom }) => {
   const { state, dispatch } = useContext(EditorContext);
   const { id } = useParams();
 
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const customUrl = urlParams.get('url');
+
   useEffect(() => {
-    dispatch({ type: 'SET_TEMPLATE', id });
+    const args = custom
+      ? {
+          type: 'SET_CUSTOMIMAGE',
+          value: customUrl
+        }
+      : {
+          type: 'SET_TEMPLATE',
+          id
+        };
+    dispatch(args);
     // eslint-disable-next-line
   }, []);
 

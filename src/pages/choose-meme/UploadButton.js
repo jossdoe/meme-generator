@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './UploadButton.css';
 import logo from '../../assets/logo/logo1.png';
 import { useHistory } from 'react-router-dom';
+import { FaUpload } from "react-icons/fa";
 
 
 function UploadButton() {
@@ -25,7 +26,8 @@ function UploadButton() {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button onClick={handleClick}>UPLOAD YOUR URL</button>
+      <button onClick={handleClick}><FaUpload /></button>
+      
     </div>
   );
 }

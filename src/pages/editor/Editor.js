@@ -25,7 +25,9 @@ const Editor = () => {
       <section className={css.memeContainer}>
         <div className={css.meme}>
           {panel ? (
-            <div className={css.aboveImage}>{state.textFields[0]}</div>
+            <div className={css.aboveImage}>
+              <div>{state.textFields[0]}</div>
+            </div>
           ) : null}
 
           <img src={image.src} alt='' />

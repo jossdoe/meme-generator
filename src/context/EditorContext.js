@@ -6,7 +6,9 @@ const initialState = {
   template: templates[0],
   textFields: [...templates[0].text.map(() => 'Your Text')],
   fontFamily: 'Impact',
-  fontSize: 18
+  fontSize: 18,
+  memeRef: null,
+  showGeneratedMeme: false
 };
 
 const editorReducer = (state, action) => {
@@ -62,6 +64,12 @@ const editorReducer = (state, action) => {
 
     case 'SET_FONTSIZE':
       return { ...state, fontSize: action.value };
+
+    case 'GENERATE_IMAGE':
+      return { ...state, memeRef: action.value, showGeneratedMeme: true };
+
+    case 'CLOSE_OVERLAY':
+      return { ...state, memeRef: null, showGeneratedMeme: false };
 
     default:
       return { ...state };

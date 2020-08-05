@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { EditorContext } from '../../context';
@@ -8,12 +8,13 @@ import EditorNav from '../../components/editor-nav/EditorNav';
 const Editor = ({ custom }) => {
   const { state, dispatch } = useContext(EditorContext);
   const { id } = useParams();
-
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const customUrl = urlParams.get('url');
+  const memeRef = useRef(null);
 
   useEffect(() => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const customUrl = urlParams.get('url');
+
     const args = custom
       ? {
           type: 'SET_CUSTOMIMAGE',
@@ -23,6 +24,7 @@ const Editor = ({ custom }) => {
           type: 'SET_TEMPLATE',
           id
         };
+
     dispatch(args);
     // eslint-disable-next-line
   }, []);
@@ -36,7 +38,7 @@ const Editor = ({ custom }) => {
         <EditorNav />
       </nav>
       <section className={css.memeContainer}>
-        <div className={css.meme}>
+        <div className={css.meme} ref={memeRef}>
           {panel ? (
             <div className={css.aboveImage}>
               <div>{state.textFields[0]}</div>

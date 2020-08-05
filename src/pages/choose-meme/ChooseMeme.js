@@ -3,6 +3,7 @@ import gridImg from "./gridImg";
 import Gallery from "./Gallery";
 import UploadButton from "./UploadButton";
 import "./Gallery.css";
+import Footer from './Footer/Footer'
 
 const ChooseMeme = () => {
   const images = gridImg.map((img) => (
@@ -13,6 +14,7 @@ const ChooseMeme = () => {
     <div>
       <UploadButton />
       <div className="gallery">{images}</div>
+      <Footer />
     </div>
   );
 };

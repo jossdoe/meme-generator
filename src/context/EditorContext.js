@@ -21,6 +21,37 @@ const editorReducer = (state, action) => {
         textFields: newTemplate.text.map(() => 'Your Text')
       };
 
+    case 'SET_CUSTOMIMAGE':
+      const customTemplate = {
+        src: action.value,
+        text: [
+          {
+            title: 'Top',
+            textOnPicture: true,
+            css: {
+              top: '0px',
+              left: '0px',
+              right: '0px'
+            }
+          },
+          {
+            title: 'Bottom',
+            textOnPicture: true,
+            css: {
+              bottom: '0px',
+              left: '0px',
+              right: '0px'
+            }
+          }
+        ]
+      };
+
+      return {
+        ...state,
+        template: customTemplate,
+        textFields: ['Your Text', 'Your Text']
+      };
+
     case 'SET_TEXTFIELD':
       const newFields = [...state.textFields];
       newFields[action.id] = action.value;

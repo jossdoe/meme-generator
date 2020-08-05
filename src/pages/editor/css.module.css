@@ -41,6 +41,12 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   overflow: hidden;
+  display: flex;
+}
+
+.aboveImage div {
+  flex-grow: 1;
+  width: 0;
 }
 
 .meme img {

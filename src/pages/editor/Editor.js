@@ -5,6 +5,7 @@ import { EditorContext } from 'context';
 import css from './css.module.css';
 import EditorNav from 'components/editor-nav';
 import Panel from 'components/panel';
+import TextOverlay from 'components/text-overlay';
 import getQueryParam from 'util/getQueryParam';
 
 const Editor = ({ custom }) => {
@@ -27,7 +28,7 @@ const Editor = ({ custom }) => {
     // eslint-disable-next-line
   }, []);
 
-  const { template, textFields, fontFamily, fontSize } = state;
+  const { template, textFields } = state;
   const panel = template.text.some((field) => !field.textOnPicture);
 
   return (
@@ -42,25 +43,7 @@ const Editor = ({ custom }) => {
           <img src={template.src} alt='' />
 
           {template.text.map((field, idx) => (
-            <div
-              key={idx}
-              className={css.textOverlay}
-              style={{
-                ...field.css,
-                fontFamily: fontFamily,
-                fontSize: `${fontSize}px`,
-                whiteSpace: 'pre-line'
-              }}
-            >
-              {textFields[idx].split('\n').map((line, key) => {
-                return (
-                  <React.Fragment key={key}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                );
-              })}
-            </div>
+            <TextOverlay cssPositioning={field.css} content={textFields[idx]} />
           ))}
         </div>
       </section>

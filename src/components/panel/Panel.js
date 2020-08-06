@@ -1,18 +1,10 @@
 import React from 'react';
 import css from './css.module.css';
+import transformBreaks from 'utils/transformBreaks';
 
 const Panel = ({ content }) => (
   <div className={css.aboveImage}>
-    <div>
-      {content.split('\n').map((line, key) => {
-        return (
-          <React.Fragment key={key}>
-            {line}
-            <br />
-          </React.Fragment>
-        );
-      })}
-    </div>
+    <div>{transformBreaks(content)}</div>
   </div>
 );
 

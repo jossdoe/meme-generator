@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import { EditorContext } from 'context';
 import css from './css.module.css';
+import transformBreaks from 'utils/transformBreaks';
 
 const TextOverlay = ({ cssPositioning, content }) => {
   const {
@@ -17,14 +18,7 @@ const TextOverlay = ({ cssPositioning, content }) => {
         fontSize: `${fontSize}px`
       }}
     >
-      {content.split('\n').map((line, key) => {
-        return (
-          <React.Fragment key={key}>
-            {line}
-            <br />
-          </React.Fragment>
-        );
-      })}
+      {transformBreaks(content)}
     </div>
   );
 };

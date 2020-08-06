@@ -41,7 +41,16 @@ const Editor = ({ custom }) => {
         <div className={css.meme} ref={memeRef}>
           {panel ? (
             <div className={css.aboveImage}>
-              <div>{state.textFields[0]}</div>
+              <div>
+                {state.textFields[0].split('\n').map((line, key) => {
+                  return (
+                    <React.Fragment key={key}>
+                      {line}
+                      <br />
+                    </React.Fragment>
+                  );
+                })}
+              </div>
             </div>
           ) : null}
 
@@ -54,7 +63,8 @@ const Editor = ({ custom }) => {
               style={{
                 ...field.css,
                 fontFamily: state.fontFamily,
-                fontSize: `${state.fontSize}px`
+                fontSize: `${state.fontSize}px`,
+                whiteSpace: 'pre-line'
               }}
             >
               {state.textFields[idx]}

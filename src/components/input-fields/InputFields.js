@@ -15,7 +15,7 @@ const InputFields = () => {
       {state.template.text.map((field, idx) => (
         <div key={idx}>
           <label htmlFor={`field${idx}`}>{field.title}</label>
-          <input
+          <textarea
             id={`field${idx}`}
             type='text'
             value={state.textFields[idx]}

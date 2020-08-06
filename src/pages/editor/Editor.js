@@ -67,7 +67,14 @@ const Editor = ({ custom }) => {
                 whiteSpace: 'pre-line'
               }}
             >
-              {state.textFields[idx]}
+              {state.textFields[idx].split('\n').map((line, key) => {
+                return (
+                  <React.Fragment key={key}>
+                    {line}
+                    <br />
+                  </React.Fragment>
+                );
+              })}
             </div>
           ))}
         </div>

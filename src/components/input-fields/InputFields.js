@@ -19,6 +19,7 @@ const InputFields = () => {
             id={`field${idx}`}
             type='text'
             value={state.textFields[idx]}
+            rows='3'
             onChange={(e) =>
               dispatch({
                 type: 'SET_TEXTFIELD',

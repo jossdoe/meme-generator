@@ -1,6 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 
-import { default as templates } from '../pages/choose-meme/gridImg';
+import { default as templates } from 'pages/choose-meme/gridImg';
 
 const initialState = {
   template: templates[0],

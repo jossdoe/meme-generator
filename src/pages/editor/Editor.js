@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { EditorContext } from '../../context';
+import { EditorContext } from 'context';
 import css from './css.module.css';
-import EditorNav from '../../components/editor-nav/EditorNav';
+import EditorNav from 'components/editor-nav';
+import getQueryParam from 'util/getQueryParam';
 
 const Editor = ({ custom }) => {
   const { state, dispatch } = useContext(EditorContext);
@@ -11,14 +12,10 @@ const Editor = ({ custom }) => {
   const memeRef = useRef(null);
 
   useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const customUrl = urlParams.get('url');
-
     const args = custom
       ? {
           type: 'SET_CUSTOMIMAGE',
-          value: customUrl
+          value: getQueryParam('url')
         }
       : {
           type: 'SET_TEMPLATE',

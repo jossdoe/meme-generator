@@ -11,8 +11,9 @@ function UploadButton() {
   function handleClick() {
     if (inputValue === '') {
       alert('Paste your Url!!!');
-    } else if (!inputValue.includes('http://')) {
+    } else if (!inputValue.includes('http://') && !inputValue.includes('https://') ) {
       alert('This is not URL!!!');
+      setInputValue('');
     } else {
       history.push(`/editor/custom?url=${inputValue}`);
     }
@@ -21,9 +22,10 @@ function UploadButton() {
   function handleEnter(e) {
     if (e.keyCode === 13) {
       if (inputValue === '') {
-        alert('Paste your Url');
-      } else if (!inputValue.includes('http://')) {
+        alert('Paste your Url!!!');
+      } else if (!inputValue.includes('http://') && !inputValue.includes('https://')) {
         alert('This is not URL!!!');
+        setInputValue('');
       } else {
         history.push(`/editor/custom?url=${inputValue}`);
       }

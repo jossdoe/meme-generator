@@ -7,14 +7,23 @@ import { FaUpload } from 'react-icons/fa';
 function UploadButton() {
   let history = useHistory();
   const [inputValue, setInputValue] = useState('');
-
+  
+  
   function handleClick() {
-    history.push(`/editor/custom?url=${inputValue}`);
+    if(inputValue === '') {
+      alert('Paste your Url');
+    }else {
+      history.push(`/editor/custom?url=${inputValue}`);
+    }
   }
 
   function handleEnter(e) {
     if(e.keyCode === 13){
-      history.push(`/editor/custom?url=${inputValue}`);
+      if(inputValue === '') {
+        alert('Paste your Url');
+      }else {
+        history.push(`/editor/custom?url=${inputValue}`);
+      }
     }
   }
 

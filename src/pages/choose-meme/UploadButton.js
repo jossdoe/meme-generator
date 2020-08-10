@@ -39,6 +39,7 @@ function UploadButton() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleEnter}
+          autoComplete="off"
         />
         <button onClick={handleClick}>
           <FaUpload />

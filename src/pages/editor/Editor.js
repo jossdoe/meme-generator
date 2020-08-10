@@ -6,7 +6,7 @@ import css from './css.module.css';
 import EditorNav from 'components/editor-nav';
 import Panel from 'components/panel';
 import TextOverlay from 'components/text-overlay';
-import getQueryParam from 'util/getQueryParam';
+import getQueryParam from 'utils/getQueryParam';
 
 const Editor = ({ custom }) => {
   const { state, dispatch } = useContext(EditorContext);

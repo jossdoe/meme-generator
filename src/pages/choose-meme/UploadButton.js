@@ -12,6 +12,13 @@ function UploadButton() {
     history.push(`/editor/custom?url=${inputValue}`);
   }
 
+  function handleEnter(e) {
+    if(e.keyCode === 13){
+      history.push(`/editor/custom?url=${inputValue}`);
+    }
+  }
+
+
   return (
     <div className='uploadButton'>
       <div className='logo'>
@@ -22,6 +29,7 @@ function UploadButton() {
           type='text'
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={handleEnter}
         />
         <button onClick={handleClick}>
           <FaUpload />

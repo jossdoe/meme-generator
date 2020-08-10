@@ -1,9 +1,9 @@
 import React from 'react';
 
 import css from './css.module.css';
-import BackButton from '../back-button/BackButton';
-import InputFields from '../input-fields/InputFields';
-import GenerateButton from '../generate-button/GenerateButton';
+import BackButton from 'components/back-button/BackButton';
+import InputFields from 'components/input-fields/InputFields';
+import GenerateButton from 'components/generate-button/GenerateButton';
 
 const EditorNav = () => {
   return (

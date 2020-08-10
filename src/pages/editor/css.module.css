@@ -32,23 +32,6 @@
   text-shadow: 0px 0px 10px #000000;
 }
 
-.aboveImage {
-  background-color: white;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
-  word-break: break-word;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  overflow: hidden;
-  display: flex;
-}
-
-.aboveImage div {
-  flex-grow: 1;
-  width: 0;
-}
-
 .meme img {
   display: block;
 }

@@ -1,9 +1,12 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { EditorContext } from '../../context';
+import { EditorContext } from 'context';
 import css from './css.module.css';
-import EditorNav from '../../components/editor-nav/EditorNav';
+import EditorNav from 'components/editor-nav';
+import Panel from 'components/panel';
+import TextOverlay from 'components/text-overlay';
+import getQueryParam from 'utils/getQueryParam';
 
 const Editor = ({ custom }) => {
   const { state, dispatch } = useContext(EditorContext);
@@ -11,26 +14,22 @@ const Editor = ({ custom }) => {
   const memeRef = useRef(null);
 
   useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const customUrl = urlParams.get('url');
-
-    const args = custom
-      ? {
-          type: 'SET_CUSTOMIMAGE',
-          value: customUrl
-        }
-      : {
-          type: 'SET_TEMPLATE',
-          id
-        };
-
-    dispatch(args);
+    dispatch(
+      custom
+        ? {
+            type: 'SET_CUSTOMIMAGE',
+            value: getQueryParam('url')
+          }
+        : {
+            type: 'SET_TEMPLATE',
+            id
+          }
+    );
     // eslint-disable-next-line
   }, []);
 
-  const image = state.template;
-  const panel = image.text.find((field) => !field.textOnPicture) !== undefined;
+  const { template, textFields } = state;
+  const panel = template.text.some((field) => !field.textOnPicture);
 
   return (
     <main className={css.main}>
@@ -39,43 +38,12 @@ const Editor = ({ custom }) => {
       </nav>
       <section className={css.memeContainer}>
         <div className={css.meme} ref={memeRef}>
-          {panel ? (
-            <div className={css.aboveImage}>
-              <div>
-                {state.textFields[0].split('\n').map((line, key) => {
-                  return (
-                    <React.Fragment key={key}>
-                      {line}
-                      <br />
-                    </React.Fragment>
-                  );
-                })}
-              </div>
-            </div>
-          ) : null}
+          {panel ? <Panel content={textFields[0]} /> : null}
 
-          <img src={image.src} alt='' />
+          <img src={template.src} alt='' />
 
-          {image.text.map((field, idx) => (
-            <div
-              key={idx}
-              className={css.textOverlay}
-              style={{
-                ...field.css,
-                fontFamily: state.fontFamily,
-                fontSize: `${state.fontSize}px`,
-                whiteSpace: 'pre-line'
-              }}
-            >
-              {state.textFields[idx].split('\n').map((line, key) => {
-                return (
-                  <React.Fragment key={key}>
-                    {line}
-                    <br />
-                  </React.Fragment>
-                );
-              })}
-            </div>
+          {template.text.map((field, idx) => (
+            <TextOverlay cssPositioning={field.css} content={textFields[idx]} />
           ))}
         </div>
       </section>

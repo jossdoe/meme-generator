@@ -10,7 +10,7 @@ function UploadButton() {
 
   function handleClick() {
     if (inputValue === '') {
-      alert('Paste your Url');
+      alert('Paste your Url!!!');
     } else if (!inputValue.includes('http://')) {
       alert('This is not URL!!!');
     } else {

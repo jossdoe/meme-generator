@@ -9,15 +9,28 @@ function UploadButton() {
   const [inputValue, setInputValue] = useState('');
 
   function handleClick() {
-    history.push(`/editor/custom?url=${inputValue}`);
-  }
-
-  function handleEnter(e) {
-    if(e.keyCode === 13){
+    if (inputValue === '') {
+      alert('Paste your Url!!!');
+    } else if (!inputValue.includes('http://') && !inputValue.includes('https://') ) {
+      alert('This is not URL!!!');
+      setInputValue('');
+    } else {
       history.push(`/editor/custom?url=${inputValue}`);
     }
   }
 
+  function handleEnter(e) {
+    if (e.keyCode === 13) {
+      if (inputValue === '') {
+        alert('Paste your Url!!!');
+      } else if (!inputValue.includes('http://') && !inputValue.includes('https://')) {
+        alert('This is not URL!!!');
+        setInputValue('');
+      } else {
+        history.push(`/editor/custom?url=${inputValue}`);
+      }
+    }
+  }
 
   return (
     <div className='uploadButton'>
@@ -30,6 +43,7 @@ function UploadButton() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleEnter}
+          autoComplete='off'
         />
         <button onClick={handleClick}>
           <FaUpload />

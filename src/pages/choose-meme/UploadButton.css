@@ -109,3 +109,14 @@
     width: 28%;
   }
 }
+
+@media screen and (max-width: 1200px) and (min-width: 1024px) {
+  .uploadButton input {
+    width: 26%;
+    padding: 0.7em;
+  }
+  .uploadButton button {
+    padding: 0.7em;
+    margin-bottom: 0em;
+  }
+}

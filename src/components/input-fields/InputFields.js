@@ -9,6 +9,8 @@ const InputFields = () => {
     dispatch({ type: 'SET_FONTFAMILY', value: e.target.value });
   const onChangeFontSize = (e) =>
     dispatch({ type: 'SET_FONTSIZE', value: e.target.value });
+  const onChangeFontColor = (e) =>
+    dispatch({ type: 'SET_FONTCOLOR', value: e.target.value });
 
   return (
     <div className={css.inputFields}>
@@ -56,6 +58,19 @@ const InputFields = () => {
             <option value='30'>30</option>
             <option value='42'>42</option>
             <option value='54'>54</option>
+          </select>
+        </div>
+      </div>
+      <div className={css.dropdownContainer}>
+        <div>
+          <label htmlFor='font-color'>Font Color</label>
+          <select
+            id='font-color'
+            value={state.fontColor}
+            onChange={onChangeFontColor}
+          >
+            <option value='white'>White</option>
+            <option value='black'>Black</option>
           </select>
         </div>
       </div>

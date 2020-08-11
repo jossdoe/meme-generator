@@ -79,3 +79,17 @@
     align-self: center;
   }
 }
+
+@media screen and (max-width: 1699px) and (min-width: 1281px) {
+  .gallery > div {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .gallery > div img {
+    width: 100%;
+    align-self: center;
+  }
+}

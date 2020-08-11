@@ -6,6 +6,7 @@ import css from './css.module.css';
 import EditorNav from 'components/editor-nav';
 import Panel from 'components/panel';
 import TextOverlay from 'components/text-overlay';
+import Modal from 'components/Overlay/OverlayPicture';
 import getQueryParam from 'utils/getQueryParam';
 
 const Editor = ({ custom }) => {
@@ -32,22 +33,29 @@ const Editor = ({ custom }) => {
   const panel = template.text.some((field) => !field.textOnPicture);
 
   return (
-    <main className={css.main}>
-      <nav className={css.navigation}>
-        <EditorNav />
-      </nav>
-      <section className={css.memeContainer}>
-        <div className={css.meme} ref={memeRef}>
-          {panel ? <Panel content={textFields[0]} /> : null}
+    <>
+      <main className={css.main}>
+        <nav className={css.navigation}>
+          <EditorNav />
+        </nav>
+        <section className={css.memeContainer}>
+          <div className={css.meme} ref={memeRef}>
+            {panel ? <Panel content={textFields[0]} /> : null}
 
-          <img src={template.src} alt='' />
+            <img src={template.src} alt='' />
 
-          {template.text.map((field, idx) => (
-            <TextOverlay cssPositioning={field.css} content={textFields[idx]} />
-          ))}
-        </div>
-      </section>
-    </main>
+            {template.text.map((field, idx) => (
+              <TextOverlay
+                key={idx}
+                cssPositioning={field.css}
+                content={textFields[idx]}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
+      {state.showModal && <Modal memeRef={memeRef.current} />}
+    </>
   );
 };
 

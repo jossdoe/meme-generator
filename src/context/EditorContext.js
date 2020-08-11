@@ -8,7 +8,7 @@ const initialState = {
   fontFamily: 'Impact',
   fontSize: 18,
   memeRef: null,
-  showGeneratedMeme: false
+  showModal: false
 };
 
 const editorReducer = (state, action) => {
@@ -66,10 +66,10 @@ const editorReducer = (state, action) => {
       return { ...state, fontSize: action.value };
 
     case 'GENERATE_IMAGE':
-      return { ...state, memeRef: action.value, showGeneratedMeme: true };
+      return { ...state, memeRef: action.value, showModal: true };
 
     case 'CLOSE_OVERLAY':
-      return { ...state, memeRef: null, showGeneratedMeme: false };
+      return { ...state, memeRef: null, showModal: false };
 
     default:
       return { ...state };

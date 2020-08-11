@@ -17,7 +17,7 @@ import pablo from 'assets/templates/sad-pablo.png';
 import think from 'assets/templates/think-about-it.png';
 import tuxedopooh from 'assets/templates/tuxedo-pooh.png';
 import scroll from 'assets/templates/scroll-of-truth.png';
-import kim from 'assets/templates/funnykim.jpg'
+import kim from 'assets/templates/funnykim.jpg';
 const templates = [
   {
     id: 1,
@@ -503,11 +503,21 @@ const templates = [
     src: kim,
     text: [
       {
-        title: 'Kim',
+        title: 'Top',
         textOnPicture: true,
         css: {
           top: '10px',
-          left: '190px'
+          left: '10px',
+          right: '10px'
+        }
+      },
+      {
+        title: 'Bottom',
+        textOnPicture: true,
+        css: {
+          bottom: '10px',
+          left: '10px',
+          right: '10px'
         }
       }
     ]

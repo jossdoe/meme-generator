@@ -7,6 +7,7 @@ const initialState = {
   textFields: [...templates[0].text.map(() => 'Your Text')],
   fontFamily: 'Impact',
   fontSize: 18,
+  fontColor: 'white',
   showModal: false
 };
 
@@ -63,6 +64,9 @@ const editorReducer = (state, action) => {
 
     case 'SET_FONTSIZE':
       return { ...state, fontSize: action.value };
+
+    case 'SET_FONTCOLOR':
+      return { ...state, fontColor: action.value };
 
     case 'GENERATE_IMAGE':
       return { ...state, showModal: true };
